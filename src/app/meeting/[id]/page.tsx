@@ -13,7 +13,7 @@ const Meeting = () => {
   const userName = searchParams.get("q");
   const navigate = useRouter();
   const DomainName = "meet.jit.si";
-  const roomName = id?.replace(/\s/g, "") ?? "";
+  const roomName = (Array.isArray(id) ? id.join(' ') : id)?.replace(/\s/g, "") ?? "";
   const [isNotAvailableModalOpen, setIsNotAvailableModalOpen] = useState(false);
   const [stopInternval, setStopInternval] = useState(false);
 
@@ -36,7 +36,7 @@ const Meeting = () => {
     navigate.push("/");
   };
 
-  const handleApiReady = async (api) => {
+  const handleApiReady = async (api: any) => {
     console.log("API is ready =======>" , api);
     const url = api._url
     
@@ -70,6 +70,7 @@ const Meeting = () => {
           DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
         }}
         userInfo={{
+          email: "",
           displayName: userName ?? "",
         }}
         onReadyToClose={handleRoomClose}

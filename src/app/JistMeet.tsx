@@ -48,6 +48,7 @@ const JistMeet = ({ userName, roomName, domainName, setIsRoom, onOneMinuteCallba
             DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
           }}
           userInfo={{
+            email: '',
             displayName: userName,
           }}
           onReadyToClose={() => {
