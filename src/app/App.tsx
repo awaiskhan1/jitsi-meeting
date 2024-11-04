@@ -10,6 +10,8 @@ import PrivacyModal from '@/component/PrivacyModal/PrivacyModal';
 import bg from '../bg.jpg'
 import IfAvailableModal from '@/component/IfAvailableModal/NotAvailableModal';
 
+
+
 const App = () => {
     const preRoomName = "consulto-medico-";
     const router = useRouter();
@@ -21,6 +23,8 @@ const App = () => {
      const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
      const [isIfAvailableModalOpen, setIsIfAvailableModalOpen] = useState(false);
      const [userName, setUserName] = useState("");
+
+     
      
 
 
@@ -70,7 +74,7 @@ const App = () => {
             const roomName = preRoomName + _data + '-' + (Math.floor(Math.random() * 1000) + 1);
             const name = "richesta-privata" + _data + '-' + (Math.floor(Math.random() * 1000) + 1);
             
-            const url = `/meeting/${roomName}?q=${name}`;
+            const url = `/meeting3/${roomName}?q=${name}`;
             router.push(url);
             
         } else {
